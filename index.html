@@ -23,6 +23,7 @@
     });
 
   var timeline = [];
+    
    //array of words used as stimulus
    //edit based on population
     var suicideWords = [
@@ -42,6 +43,7 @@
       'paper',
       'engine'
     ];
+    
    var positiveWords = [
       'happy',
       'success',
@@ -82,11 +84,12 @@ var stroopStimuli = [
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ neutralWords[2] +'</p><br>', data:{color:'blue', valence: 'neutral', correct_response: 1}},
   ];
 
-  var practice_instructions_1 = {
+ var practice_instructions_1 = {
         type: jsPsychHtmlButtonResponse,
         stimulus: 'In this task, words will appear on the screen in the color RED or the color BLUE.<br>If the color of the word is RED, press the <p style="color: #AA4499;font-weight:bold;">RED</p> button. <br> If the color of the word is blue, press the <p style="color: #88CCEE; font-weight:bold;">BLUE</p> button. <br>Respond as quickly and accurately as possible.<br></p>',
         choices: ['NEXT'],
     }
+
 
     var practice_instructions_2 = {
         type: jsPsychHtmlButtonResponse,
@@ -99,16 +102,17 @@ var stroopStimuli = [
         stimulus: '<p>The real task will have different words.<br><br>Continue to respond based on the COLOR of the word.<br><br>Press next to begin the task<br></p>',
         choices: ['NEXT'],
     }
-    
+
 var fixation = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<p style="font-size:80px;">+</p>',
+    stimulus: '<p style="font-size:60px;">+</p>',
     choices: "NO_KEYS",
     trial_duration: 1000,
     response_ends_trial: false,
     data: {
-    task: 'fixation'
+   task: 'fixation'
       }
+
 }
 
 var blank1 = {
@@ -118,11 +122,11 @@ var blank1 = {
     trial_duration: 2000,
     response_ends_trial: false,
     data: {
-    task: 'blank'
+        task: 'blank'
       }
 
 }
-    
+
 var blank2 = {
   type: jsPsychHtmlKeyboardResponse,
     stimulus: '',
@@ -130,8 +134,10 @@ var blank2 = {
     trial_duration: 1000,
     response_ends_trial: false,
     data: {
-    task: 'blank'
+       task: 'blank'
+
       }
+
 }
 
 var stroop = {
@@ -141,11 +147,13 @@ var stroop = {
     button_html: ['<button class="buttonRed" style="height:90px;width:110px"></button>', '<button class="buttonBlue" style="height:90px;width:110px"></button>'],
     response_ends_trial: true,
     data: {
-    task: 'response',
+        task: 'response',
     },
+
     on_finish: function(data){
-        data.response === data.correct_response ? data.correct = true : data.correct = false;
+      data.response === data.correct_response ? data.correct = true : data.correct = false;
       }
+
 };
 
 var practice = {
@@ -155,7 +163,7 @@ var practice = {
     button_html: ['<button class="buttonRed" style="height:90px;width:110px"></button>', '<button class="buttonBlue" style="height:90px;width:110px"></button>'],
     response_ends_trial: true,
     data: {
-    task: 'response',
+        task: 'response',
     },
     on_finish: function(data){
         data.response === data.correct_response ? data.correct = true : data.correct = false;
@@ -175,7 +183,6 @@ var testProcedure = {
     timeline_variables: stroopStimuli,
     randomize_order: true,
   }
-
 
   timeline.push(practice_instructions_1);
   timeline.push(practice_instructions_2);
