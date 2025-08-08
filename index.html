@@ -22,8 +22,8 @@
     }
     });
 
-  var timeline = [];
-    
+    var timeline = [];
+
    //array of words used as stimulus
    //edit based on population
     var suicideWords = [
@@ -36,55 +36,81 @@
       'alone',
       'rejected',
       'stupid'
-    ]; 
+    ];
 
     var neutralWords = [
       'museum',
       'paper',
       'engine'
     ];
-    
-   var positiveWords = [
+
+    var positiveWords = [
       'happy',
       'success',
       'pleasure'
     ];
-    
-    var practiceStimuli = [
+
+var practiceStimuli = [
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">red</p><br>', data:{color:'red', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">red</p><br>', data:{color:'blue', correct_response: 1}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">green</p><br>', data:{color:'red', correct_response: 0}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">green</p><br>', data:{color:'blue', correct_response: 1}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">blue</p><br>', data:{color:'blue', correct_response: 1}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">blue</p><br>', data:{color:'red', correct_response: 0}},
     ];
-    
+
 var stroopStimuli = [
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ suicideWords[0] +'</p><br>', data:{color:'red', valence: 'suicide', correct_response: 0}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ suicideWords[0] +'</p><br>', data:{color:'red', valence: 'suicide', correct_response: 0}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ suicideWords[0] +'</p><br>', data:{color:'blue', valence: 'suicide', correct_response: 1}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ suicideWords[0] +'</p><br>', data:{color:'blue', valence: 'suicide', correct_response: 1}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ suicideWords[1] +'</p><br>', data:{color:'red', valence: 'suicide', correct_response: 0}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ suicideWords[1] +'</p><br>', data:{color:'red', valence: 'suicide', correct_response: 0}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ suicideWords[1] +'</p><br>', data:{color:'blue',valence: 'suicide',  correct_response: 1}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ suicideWords[1] +'</p><br>', data:{color:'blue',valence: 'suicide',  correct_response: 1}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ suicideWords[2] +'</p><br>', data:{color:'red', valence: 'suicide', correct_response: 0}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ suicideWords[2] +'</p><br>', data:{color:'red', valence: 'suicide', correct_response: 0}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ suicideWords[2] +'</p><br>', data:{color:'blue', valence: 'suicide', correct_response: 1}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ suicideWords[2] +'</p><br>', data:{color:'blue', valence: 'suicide', correct_response: 1}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ negativeWords[0] +'</p><br>', data:{color:'red', valence: 'negative', correct_response: 0}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ negativeWords[0] +'</p><br>', data:{color:'red', valence: 'negative', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ negativeWords[0] +'</p><br>', data:{color:'blue', valence: 'negative', correct_response: 1}},
-    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ negativeWords[1] +'</p><br>', data:{color:'red', valence: 'negative', correct_response: 0}}
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ negativeWords[0] +'</p><br>', data:{color:'blue', valence: 'negative', correct_response: 1}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ negativeWords[1] +'</p><br>', data:{color:'red', valence: 'negative', correct_response: 0}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ negativeWords[1] +'</p><br>', data:{color:'red', valence: 'negative', correct_response: 0}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ negativeWords[1] +'</p><br>', data:{color:'blue', valence: 'negative', correct_response: 1}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ negativeWords[1] +'</p><br>', data:{color:'blue', valence: 'negative', correct_response: 1}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ negativeWords[2] +'</p><br>', data:{color:'red', valence: 'negative', correct_response: 0}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ negativeWords[2] +'</p><br>', data:{color:'red', valence: 'negative', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ negativeWords[2] +'</p><br>', data:{color:'blue', valence: 'negative', correct_response: 1}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ negativeWords[2] +'</p><br>', data:{color:'blue', valence: 'negative', correct_response: 1}},
+  { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ positiveWords[0] +'</p><br>', data:{color:'red', valence: 'positive', correct_response: 0}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ positiveWords[0] +'</p><br>', data:{color:'red', valence: 'positive', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ positiveWords[0] +'</p><br>', data:{color:'blue', valence: 'positive', correct_response: 1}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ positiveWords[0] +'</p><br>', data:{color:'blue', valence: 'positive', correct_response: 1}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ positiveWords[1] +'</p><br>', data:{color:'red', valence: 'positive', correct_response: 0}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ positiveWords[1] +'</p><br>', data:{color:'red', valence: 'positive', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ positiveWords[1] +'</p><br>', data:{color:'blue', valence: 'positive', correct_response: 1}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ positiveWords[1] +'</p><br>', data:{color:'blue', valence: 'positive', correct_response: 1}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ positiveWords[2] +'</p><br>', data:{color:'red', valence: 'positive', correct_response: 0}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ positiveWords[2] +'</p><br>', data:{color:'red', valence: 'positive', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ positiveWords[2] +'</p><br>', data:{color:'blue', valence: 'positive', correct_response: 1}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ positiveWords[2] +'</p><br>', data:{color:'blue', valence: 'positive', correct_response: 1}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ neutralWords[0] +'</p><br>', data:{color:'red', valence: 'neutral', correct_response: 0}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ neutralWords[0] +'</p><br>', data:{color:'red', valence: 'neutral', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ neutralWords[0] +'</p><br>', data:{color:'blue', valence: 'neutral', correct_response: 1}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ neutralWords[0] +'</p><br>', data:{color:'blue', valence: 'neutral', correct_response: 1}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ neutralWords[1] +'</p><br>', data:{color:'red', valence: 'neutral', correct_response: 0}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ neutralWords[1] +'</p><br>', data:{color:'red', valence: 'neutral', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ neutralWords[1] +'</p><br>', data:{color:'blue', valence: 'neutral', correct_response: 1}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ neutralWords[1] +'</p><br>', data:{color:'blue', valence: 'neutral', correct_response: 1}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ neutralWords[2] +'</p><br>', data:{color:'red', valence: 'neutral', correct_response: 0}},
+    { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ neutralWords[2] +'</p><br>', data:{color:'red', valence: 'neutral', correct_response: 0}},
+    { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ neutralWords[2] +'</p><br>', data:{color:'blue', valence: 'neutral', correct_response: 1}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ neutralWords[2] +'</p><br>', data:{color:'blue', valence: 'neutral', correct_response: 1}},
   ];
 
- var practice_instructions_1 = {
+  var practice_instructions_1 = {
         type: jsPsychHtmlButtonResponse,
         stimulus: 'In this task, words will appear on the screen in the color RED or the color BLUE.<br>If the color of the word is RED, press the <p style="color: #AA4499;font-weight:bold;">RED</p> button. <br> If the color of the word is blue, press the <p style="color: #88CCEE; font-weight:bold;">BLUE</p> button. <br>Respond as quickly and accurately as possible.<br></p>',
         choices: ['NEXT'],
@@ -175,7 +201,7 @@ var practiceProcedure = {
     timeline: [blank1, fixation, blank2, practice],
     timeline_variables: practiceStimuli,
     randomize_order: true,
-    repetitions: 1,
+    repetitions: 2,
   }
 
 var testProcedure = {
