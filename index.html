@@ -47,12 +47,14 @@
       'success',
       'pleasure'
     ];
+    
     var practiceStimuli = [
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">red</p><br>', data:{color:'red', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">red</p><br>', data:{color:'blue', correct_response: 1}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">blue</p><br>', data:{color:'blue', correct_response: 1}},
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">blue</p><br>', data:{color:'red', correct_response: 0}},
     ];
+    
 var stroopStimuli = [
     { stimulus: '<p style="color: #AA4499; font-size:60px; font-weight:bold;">'+ suicideWords[0] +'</p><br>', data:{color:'red', valence: 'suicide', correct_response: 0}},
     { stimulus: '<p style="color: #88CCEE; font-size:60px; font-weight:bold;">'+ suicideWords[0] +'</p><br>', data:{color:'blue', valence: 'suicide', correct_response: 1}},
@@ -97,6 +99,7 @@ var stroopStimuli = [
         stimulus: '<p>The real task will have different words.<br><br>Continue to respond based on the COLOR of the word.<br><br>Press next to begin the task<br></p>',
         choices: ['NEXT'],
     }
+    
 var fixation = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: '<p style="font-size:80px;">+</p>',
@@ -106,7 +109,6 @@ var fixation = {
     data: {
     task: 'fixation'
       }
-
 }
 
 var blank1 = {
@@ -120,6 +122,7 @@ var blank1 = {
       }
 
 }
+    
 var blank2 = {
   type: jsPsychHtmlKeyboardResponse,
     stimulus: '',
@@ -129,7 +132,6 @@ var blank2 = {
     data: {
     task: 'blank'
       }
-
 }
 
 var stroop = {
